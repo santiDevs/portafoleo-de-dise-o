@@ -1,0 +1,376 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* selectores */
+html{ 
+    font-family: 'Merriweather', "roboto"; 
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: url(./imagenes/manchas-acuarela.png) var(--main--color--page) no-repeat;
+    background-position: 1% 60%;
+    background-attachment: fixed;
+}
+
+header{
+    background: var(--main--color--page);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+header nav ul{
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    font-size: 25px; 
+    width: 100%;
+}
+
+h1, h2, h3, h4, p, ul, a, span{ 
+    color: var(--main--color--text); 
+}
+
+h1, h2, h3, h4, p, .contact span{
+    filter: drop-shadow(1px 1px 4px rgb(132, 218, 251));
+}
+
+ul{ 
+    list-style: none; 
+}
+
+a{ 
+    text-decoration: none; 
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer a i{
+    font-size: 30px;
+}
+
+/* clases */
+
+.social-media ul{
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    font-size: 25px; 
+}
+
+.hero{
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding: 18vw;
+    position: relative;
+} 
+
+.main-title{
+    position: absolute;
+}
+
+.hero h1{
+    filter: drop-shadow(1px 1px 4px rgb(132, 218, 251));
+}
+
+.container{ 
+    margin: 0% 0% 15% 0%; 
+}
+
+.introduction {
+    width: 100%;
+    display: flex;
+    position: relative;
+    min-height: 100vh;
+}
+
+.introduction h2{
+    font-size: 3.5vw;
+    margin: 5% ;
+    filter: drop-shadow(1px 1px 10px rgb(132, 218, 251));
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.center-container{
+    position: absolute;
+    right: 41%;
+    top: 45%;
+}
+
+.carousel-images{
+    position: relative;
+    height: 200px;
+    width: 200px;
+    transform-style: preserve-3d;
+    animation: anim 20s linear infinite;
+}
+
+.carousel-images span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transform: rotateY(calc(var(--v) * 45deg)) translateZ(500px);
+    object-fit: cover;
+    
+}
+
+.carousel-images span img{
+    width: 250px;
+    border-radius: 10px;
+}
+
+.client-opinion{
+    width: 100%;
+    height: 100%;
+    font-size: 1.7vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.client-opinion h3{
+    width: 400px;
+}
+
+.client-opinion img{
+    width: 70vw;
+}
+
+.design{
+    display: flex;
+    margin: 0% 0% 7% 0%;
+}
+
+.video-speed-paint{
+    width: 60vw;
+    margin: 0% 0% 0% 3%;
+}
+
+.portrait{
+    width: 35vw;
+    margin: 0% 0% 0% 2%;
+    animation: up-and-down 7s infinite;
+}
+
+.contact{
+    margin: 4% 0% 5% 0%;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.contact h4{
+    font-size: 1.6vw;
+    margin: 2% 0% 2% 5%;
+    width: 20vw;
+}
+
+.contact p{
+    margin: 0% 0% 0% 5%;
+    font-size: 1.4vw;
+    font-weight: 600;
+    width: 20vw;
+}
+
+.contact button{
+    width: 95px;
+    height: 45px;
+    border-radius: 10px;
+    position: absolute;
+    top: 72%;
+    left: 23%;
+    border: 0;
+    background-color: rgb(143, 181, 255);
+    font-weight: 900;
+}
+
+.contact span{
+    margin: 0% 0% 10% 5%;
+    font-size: 3vw;
+    font-weight: 700;
+}
+
+.phone-and-gmail{
+    position: absolute;
+    top: 20%;
+    left: 58%;
+    width: 30%;
+}
+
+
+/* ids */
+#main-content hr{
+    border: 1.9px solid var(--main--color--text);
+    width: 90%;
+    margin: 0% 0% 0% 5%;
+}
+
+/* pseudo clases */
+:root{
+    --main--color--text: rgb(233, 234, 255);
+    --main--color--page: rgb(0, 0, 12);
+}
+
+::-webkit-scrollbar{
+    width: 12px;
+    background: #00000c;
+    filter: drop-shadow(1px 1px 10px rgb(132, 218, 251));
+}
+
+::-webkit-scrollbar-thumb{
+    background: #E9EAFF;
+    border-radius: 20px;
+}
+
+/* animaciones */
+@keyframes anim{
+    0%{
+        transform: perspective(2000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(2000px) rotateY(360deg);
+    }
+}
+
+@keyframes up-and-down{
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-20px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+/* media queries */
+@media screen and (max-width: 375px) {
+
+    body{
+        overflow-x: hidden;
+    }
+
+    header{
+        display: flex;
+        justify-content: center;
+    }
+
+    header nav ul{
+        gap: 50px;
+        font-size: 30px;
+    }
+
+    footer{
+        flex-direction: column;
+    }
+    
+    .hero{
+        margin: 0px 0px 150px 0px;
+        font-size: 25px;
+    }
+
+    .social-media{
+        display: none;
+    }
+
+    .introduction h2{
+        font-size: 30px;
+    }
+
+    .client-opinion{
+        flex-direction: column-reverse;
+    }
+
+    .client-opinion h3{
+        width: 80%;
+        font-size: 5.5vw;
+        margin: 0% 0% 12% 0%;
+    }
+
+    .client-opinion img{
+        width: 450px;
+        padding: 16px;
+    }
+
+    .carousel-images{
+        left: 37%;
+    }
+
+    .carousel-images span{
+        transform: rotateX(calc(var(--v) * 45deg)) translateZ(250px);
+    }
+
+    .carousel-images span img{
+        width: 180px;
+    }
+
+    .design{
+        flex-direction: column;
+    }
+
+    .design video{
+        width: 95%;
+    }
+
+    .design img{
+        margin: 5% 0% 0% 40%;
+        width: 60%;
+    }
+
+    .contact h4{
+        font-size: 4vw;
+        width: 45vw;
+        margin: 2% 0% 10% 5%;
+    }
+
+    .contact p{
+        width: 30vw;
+        font-size: 3.5vw;
+    }
+
+    .contact button{
+        left: 4.5%;
+    }
+    
+    .phone-and-gmail{
+        top: 3%;
+    }
+
+    @keyframes anim{
+        0%{
+            transform: perspective(2000px) rotateX(0deg);
+        }
+        100%{
+            transform: perspective(2000px) rotateX(360deg);
+        }
+    }
+    
+}
